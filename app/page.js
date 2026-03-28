@@ -7,18 +7,24 @@ export const dynamic = 'force-dynamic';
 
 async function getProducts() {
   try {
+    console.log('Fetching products from API...');
     const res = await fetch('https://fakestoreapi.com/products', {
-      cache: 'no-store'
+      cache: 'no-store',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+      }
     });
     
     if (!res.ok) {
-        console.error('API responded with status:', res.status);
+        console.error('API Error: Status', res.status);
         return [];
     }
     
-    return res.json();
+    const data = await res.json();
+    console.log(`Successfully fetched ${data.length} products.`);
+    return data;
   } catch (error) {
-    console.error('Failed to fetch products:', error);
+    console.error('Fetch Exception:', error.message);
     return [];
   }
 }
