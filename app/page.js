@@ -3,10 +3,12 @@ import Hero from '@/components/Hero';
 import ProductList from '@/components/ProductList';
 import Footer from '@/components/Footer';
 
+export const dynamic = 'force-dynamic';
+
 async function getProducts() {
   try {
     const res = await fetch('https://fakestoreapi.com/products', {
-      next: { revalidate: 3600 } // Cache and revalidate every hour
+      cache: 'no-store'
     });
     
     if (!res.ok) {
