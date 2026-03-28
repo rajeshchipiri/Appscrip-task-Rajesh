@@ -96,6 +96,14 @@
   flex-grow: 1;
 }
 
+.loadingState {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 100px 0;
+  font-size: 1.5rem;
+  color: #888;
+}
+
 .productGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
