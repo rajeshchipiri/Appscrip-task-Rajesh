@@ -41,7 +41,18 @@ button {
   font-family: inherit;
 }
 
-/* Base Layout Utility */
+/* Base Layout Utility Classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 .container {
   max-width: var(--max-width);
   margin: 0 auto;

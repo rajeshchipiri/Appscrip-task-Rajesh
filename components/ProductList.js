@@ -45,6 +45,7 @@ const ProductList = ({ initialProducts = [] }) => {
 
   return (
     <div className={styles.productListContainer}>
+      <h2 className="sr-only">Our Product Collection</h2>
       {/* Action Bar */}
       <div className={styles.actionBar}>
         <div className={styles.leftActions}>
