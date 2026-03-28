@@ -1,0 +1,137 @@
+.productListContainer {
+  margin-top: 2rem;
+}
+
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.leftActions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.itemCount {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.filterToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+}
+
+.filterLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.sortContainer {
+  position: relative;
+}
+
+.sortButton {
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.sortDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 50;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  min-width: 250px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sortOption {
+  padding: 12px 16px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+}
+
+.sortOption:hover {
+  background-color: var(--text-inactive);
+}
+
+.activeOption {
+  font-weight: 700;
+}
+
+.mainContent {
+  display: flex;
+  gap: 2rem;
+}
+
+.gridWrapper {
+  flex-grow: 1;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.fullWidth .productGrid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1200px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fullWidth .productGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    flex-direction: column;
+  }
+  .productGrid, .fullWidth .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .itemCount {
+    display: none;
+  }
+  .leftActions {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .productGrid, .fullWidth .productGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
