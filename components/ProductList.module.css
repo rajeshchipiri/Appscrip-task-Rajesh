@@ -152,6 +152,7 @@
 
 @media (max-width: 480px) {
   .productGrid, .fullWidth .productGrid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
